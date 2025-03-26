@@ -1,0 +1,13 @@
+OPERATOR=1
+AND=2
+OR=3
+LPAREN=4
+RPAREN=5
+IDENTIFIER=6
+STRING=7
+NUMBER=8
+WS=9
+'ä¸?'=2
+'æˆ?'=3
+'('=4
+')'=5
