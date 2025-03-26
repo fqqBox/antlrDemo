@@ -1,4 +1,4 @@
-// Generated from C:/Users/xc/Desktop/workspace/poitest/src/main/java/com/szsh/antlr/ConditionParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/xc/Desktop/workspace/antlrDemo/src/main/java/com/fqq/antlr/ConditionParser.g4 by ANTLR 4.13.2
 package com.fqq.antlr.gen1;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 

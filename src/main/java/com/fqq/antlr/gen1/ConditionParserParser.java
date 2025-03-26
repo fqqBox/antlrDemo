@@ -1,4 +1,4 @@
-// Generated from C:/Users/xc/Desktop/workspace/poitest/src/main/java/com/szsh/antlr/ConditionParser.g4 by ANTLR 4.13.2
+// Generated from C:/Users/xc/Desktop/workspace/antlrDemo/src/main/java/com/fqq/antlr/ConditionParser.g4 by ANTLR 4.13.2
 package com.fqq.antlr.gen1;
 
 import org.antlr.v4.runtime.*;
@@ -21,7 +21,7 @@ public class ConditionParserParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, OP=3, OR=4, AND=5, ID=6, NUMBER=7, STRING=8, WS=9;
+		T__0=1, T__1=2, T__2=3, T__3=4, OP=5, ID=6, NUMBER=7, STRING=8, WS=9;
 	public static final int
 		RULE_condition = 0, RULE_expr = 1, RULE_orExpr = 2, RULE_andExpr = 3, 
 		RULE_atom = 4, RULE_comparison = 5, RULE_value = 6;
@@ -34,13 +34,13 @@ public class ConditionParserParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'('", "')'"
+			null, "'\\u93B4\\uFFFD'", "'\\u6D93\\uFFFD'", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, "OP", "OR", "AND", "ID", "NUMBER", "STRING", "WS"
+			null, null, null, null, null, "OP", "ID", "NUMBER", "STRING", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -195,10 +195,6 @@ public class ConditionParserParser extends Parser {
 		public AndExprContext andExpr(int i) {
 			return getRuleContext(AndExprContext.class,i);
 		}
-		public List<TerminalNode> OR() { return getTokens(ConditionParserParser.OR); }
-		public TerminalNode OR(int i) {
-			return getToken(ConditionParserParser.OR, i);
-		}
 		public OrExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -230,11 +226,11 @@ public class ConditionParserParser extends Parser {
 			setState(24);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==OR) {
+			while (_la==T__0) {
 				{
 				{
 				setState(20);
-				match(OR);
+				match(T__0);
 				setState(21);
 				andExpr();
 				}
@@ -263,10 +259,6 @@ public class ConditionParserParser extends Parser {
 		}
 		public AtomContext atom(int i) {
 			return getRuleContext(AtomContext.class,i);
-		}
-		public List<TerminalNode> AND() { return getTokens(ConditionParserParser.AND); }
-		public TerminalNode AND(int i) {
-			return getToken(ConditionParserParser.AND, i);
 		}
 		public AndExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -299,11 +291,11 @@ public class ConditionParserParser extends Parser {
 			setState(32);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==AND) {
+			while (_la==T__1) {
 				{
 				{
 				setState(28);
-				match(AND);
+				match(T__1);
 				setState(29);
 				atom();
 				}
@@ -359,15 +351,15 @@ public class ConditionParserParser extends Parser {
 			setState(40);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__0:
+			case T__2:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(35);
-				match(T__0);
+				match(T__2);
 				setState(36);
 				expr();
 				setState(37);
-				match(T__1);
+				match(T__3);
 				}
 				break;
 			case ID:
@@ -512,18 +504,18 @@ public class ConditionParserParser extends Parser {
 		"\u0000\u0000\f.\u0001\u0000\u0000\u0000\u000e\u000f\u0003\u0002\u0001"+
 		"\u0000\u000f\u0010\u0005\u0000\u0000\u0001\u0010\u0001\u0001\u0000\u0000"+
 		"\u0000\u0011\u0012\u0003\u0004\u0002\u0000\u0012\u0003\u0001\u0000\u0000"+
-		"\u0000\u0013\u0018\u0003\u0006\u0003\u0000\u0014\u0015\u0005\u0004\u0000"+
+		"\u0000\u0013\u0018\u0003\u0006\u0003\u0000\u0014\u0015\u0005\u0001\u0000"+
 		"\u0000\u0015\u0017\u0003\u0006\u0003\u0000\u0016\u0014\u0001\u0000\u0000"+
 		"\u0000\u0017\u001a\u0001\u0000\u0000\u0000\u0018\u0016\u0001\u0000\u0000"+
 		"\u0000\u0018\u0019\u0001\u0000\u0000\u0000\u0019\u0005\u0001\u0000\u0000"+
 		"\u0000\u001a\u0018\u0001\u0000\u0000\u0000\u001b \u0003\b\u0004\u0000"+
-		"\u001c\u001d\u0005\u0005\u0000\u0000\u001d\u001f\u0003\b\u0004\u0000\u001e"+
+		"\u001c\u001d\u0005\u0002\u0000\u0000\u001d\u001f\u0003\b\u0004\u0000\u001e"+
 		"\u001c\u0001\u0000\u0000\u0000\u001f\"\u0001\u0000\u0000\u0000 \u001e"+
 		"\u0001\u0000\u0000\u0000 !\u0001\u0000\u0000\u0000!\u0007\u0001\u0000"+
-		"\u0000\u0000\" \u0001\u0000\u0000\u0000#$\u0005\u0001\u0000\u0000$%\u0003"+
-		"\u0002\u0001\u0000%&\u0005\u0002\u0000\u0000&)\u0001\u0000\u0000\u0000"+
+		"\u0000\u0000\" \u0001\u0000\u0000\u0000#$\u0005\u0003\u0000\u0000$%\u0003"+
+		"\u0002\u0001\u0000%&\u0005\u0004\u0000\u0000&)\u0001\u0000\u0000\u0000"+
 		"\')\u0003\n\u0005\u0000(#\u0001\u0000\u0000\u0000(\'\u0001\u0000\u0000"+
-		"\u0000)\t\u0001\u0000\u0000\u0000*+\u0005\u0006\u0000\u0000+,\u0005\u0003"+
+		"\u0000)\t\u0001\u0000\u0000\u0000*+\u0005\u0006\u0000\u0000+,\u0005\u0005"+
 		"\u0000\u0000,-\u0003\f\u0006\u0000-\u000b\u0001\u0000\u0000\u0000./\u0007"+
 		"\u0000\u0000\u0000/\r\u0001\u0000\u0000\u0000\u0003\u0018 (";
 	public static final ATN _ATN =
