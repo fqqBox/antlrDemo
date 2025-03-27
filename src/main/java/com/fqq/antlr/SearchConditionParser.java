@@ -32,7 +32,7 @@ public class SearchConditionParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, "'\\u6D93\\uFFFD'", "'\\u93B4\\uFFFD'", "'('", "')'"
+			null, null, "'AND'", "'OR'", "'('", "')'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
