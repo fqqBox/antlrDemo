@@ -48,12 +48,7 @@ public class SearchConditionVisitor extends SearchConditionBaseVisitor<Boolean> 
     @Override
     public Boolean visitFieldCompare(SearchConditionParser.FieldCompareContext ctx) {
         String fieldName = ctx.field().getText();
-        String operator = null;
-        if (ctx.OPERATOR() != null) {
-            operator = ctx.OPERATOR().getText();
-        } else {
-            return false; // 如果操作符为空，直接返回 false
-        }
+        String operator = ctx.OPERATOR().getText();
         String valueText = ctx.value().getText();
 
         Object fieldValue = rowData.get(fieldName);
@@ -64,33 +59,33 @@ public class SearchConditionVisitor extends SearchConditionBaseVisitor<Boolean> 
         if (fieldValue instanceof String) {
             String strValue = valueText.replaceAll("^['\"]|['\"]$", "");
             switch (operator) {
-                case "等于":
+                case "Equal":
                     return fieldValue.equals(strValue);
-                case "包含":
+                case "Contains":
                     return ((String) fieldValue).contains(strValue);
-                case "不包含":
+                case "NotContains":
                     return !((String) fieldValue).contains(strValue);
-                case "开头是":
+                case "StartsWith":
                     return ((String) fieldValue).startsWith(strValue);
-                case "开头不是":
+                case "NotStartsWith":
                     return !((String) fieldValue).startsWith(strValue);
-                case "结尾是":
+                case "EndsWith":
                     return ((String) fieldValue).endsWith(strValue);
-                case "结尾不是":
+                case "NotEndsWith":
                     return !((String) fieldValue).endsWith(strValue);
             }
         } else if (fieldValue instanceof Number) {
             double numValue = Double.parseDouble(valueText);
             switch (operator) {
-                case "大于":
+                case "GreaterThan":
                     return ((Number) fieldValue).doubleValue() > numValue;
-                case "小于":
+                case "LessThan":
                     return ((Number) fieldValue).doubleValue() < numValue;
-                case "等于":
+                case "Equal":
                     return ((Number) fieldValue).doubleValue() == numValue;
-                case "大于等于":
+                case "GreaterThanOrEqual":
                     return ((Number) fieldValue).doubleValue() >= numValue;
-                case "小于等于":
+                case "LessThanOrEqual":
                     return ((Number) fieldValue).doubleValue() <= numValue;
             }
         }

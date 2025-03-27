@@ -11,11 +11,11 @@ public class SearchConditionParserDemo {
     public static void main(String[] args) {
         // 示例行数据
         Map<String, Object> rowData = new HashMap<>();
-        rowData.put("年龄", 25);
-        rowData.put("姓名", "小明");
+        rowData.put("Age", 253);
+        rowData.put("Name", "小明");
 
-        // 示例搜索条件
-        String condition = "(年龄 大于 20 且 年龄 小于 30) 或 姓名 等于 小明";
+        // 示例搜索条件，使用英文操作符和逻辑连接词
+        String condition = "(Age GreaterThan 20 AND Age LessThan 30) OR Name Equal '小明'";
 
         // 创建词法分析器
         SearchConditionLexer lexer = new SearchConditionLexer(CharStreams.fromString(condition));
@@ -33,4 +33,4 @@ public class SearchConditionParserDemo {
 
         System.out.println("解析结果: " + result);
     }
-}    
+}
